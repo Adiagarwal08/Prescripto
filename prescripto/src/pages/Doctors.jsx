@@ -12,7 +12,13 @@ const Doctors = () => {
 
   const applyFilter = () => {
     if (speciality) {
-      setFilterDoc(doctors.filter((doc) => doc.speciality === speciality));
+      setFilterDoc(
+        doctors.filter(
+          (doc) =>
+            doc.speciality.trim().toLowerCase() ===
+            speciality.trim().toLowerCase()
+        )
+      );
     } else {
       setFilterDoc(doctors);
     }
